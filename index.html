@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>Exercice 3</title>
+</head>
+<body>
+    <div class="userAnswer">
+        <label for="statesQuestion">Essayez de trouver le nombre généré</label>
+        <input type="text" id="answer" />
+    </div>
+    <div>
+        <button id="buttonTest">Tester votre réponse</button>
+    </div>
+    <script>
+        var min = 0;
+        var max = 101;
+        number = (Math.random() * (max - min) + min);
+        number = Math.floor(number);
+        console.log(number);
+
+        $('#buttonTest').on('click', () => {
+            var answer = $('#answer').val();
+            if(answer == number){
+                alert('Correct !');
+            }else if( answer > number){
+                alert('Moins que ça !');
+            }else if(answer < number){
+                alert('Plus que ça !')
+            }
+        })
+    </script>
+</body>
+</html>
