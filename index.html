@@ -16,22 +16,24 @@
         <button id="buttonTest">Tester votre réponse</button>
     </div>
     <script>
-        var min = 0;
-        var max = 101;
-        number = (Math.random() * (max - min) + min);
-        number = Math.floor(number);
-        console.log(number);
+        $(document).ready(() => {
+            var min = 0;
+            var max = 101;
+            number = (Math.random() * (max - min) + min);
+            number = Math.floor(number);
+            console.log(number);
 
-        $('#buttonTest').on('click', () => {
-            var answer = $('#answer').val();
-            if(answer == number){
-                alert('Correct !');
-            }else if( answer > number){
-                alert('Moins que ça !');
-            }else if(answer < number){
-                alert('Plus que ça !')
-            }
-        })
+            $('#buttonTest').on('click', () => {
+                var answer = $('#answer').val();
+                if(answer == number){
+                    alert('Correct !');
+                }else if( answer > number){
+                    alert('Moins que ça !');
+                }else if(answer < number){
+                    alert('Plus que ça !')
+                }
+            })
+        });
     </script>
 </body>
 </html>
